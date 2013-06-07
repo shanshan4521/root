@@ -1,0 +1,341 @@
+[2013-06-06 11:20:40,985]	------- Initializing ----------------------
+[2013-06-06 11:20:41,033]	Using default implementation for ThreadExecutor
+[2013-06-06 11:20:41,047]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-06 11:20:41,047]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-06 11:20:41,051]	Registering Quartz Job Initialization Plug-in.
+[2013-06-06 11:20:41,052]	RAMJobStore initialized.
+[2013-06-06 11:20:41,053]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'TestScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 3 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-06 11:20:41,053]	Quartz scheduler 'TestScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-06 11:20:41,053]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-06 11:20:41,053]	------- Initialization Complete -----------
+[2013-06-06 11:20:41,053]	------- Scheduling Jobs -------------------
+[2013-06-06 11:20:41,065]	group1.interruptableJob1 will run at: Thu Jun 06 11:20:45 CST 2013 and repeat: -1 times, every 5 seconds
+[2013-06-06 11:20:41,084]	Unable to load local schema packaged in quartz distribution jar. Utilizing schema online at http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd
+[2013-06-06 11:20:41,088]	Parsing XML file: quartz_data.xml with systemId: quartz_data.xml
+[2013-06-06 11:20:41,759]	Deleting all jobs in ALL groups.
+[2013-06-06 11:20:41,762]	Deleting all triggers in ALL groups.
+[2013-06-06 11:20:41,765]	Adding 3 jobs, 4 triggers.
+[2013-06-06 11:20:41,765]	Adding job: DEFAULT.TestJob1
+[2013-06-06 11:20:41,765]	Adding job: DEFAULT.TestDurableJob
+[2013-06-06 11:20:41,765]	Adding job: GroupOfTestJob2.TestJob2
+[2013-06-06 11:20:41,770]	Scheduler TestScheduler_$_NON_CLUSTERED started.
+[2013-06-06 11:20:41,770]	------- Started Scheduler -----------------
+[2013-06-06 11:20:41,770]	------- Starting loop to interrupt job every 7 seconds ----------
+[2013-06-06 11:20:41,789]	Job JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml fired (by trigger JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml) at:  11:20:41 06/06/2013
+[2013-06-06 11:20:41,790]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:20:41 06/06/2013
+[2013-06-06 11:20:41,790]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats) at:  11:20:41 06/06/2013
+[2013-06-06 11:20:41,790]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:20:41 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:20:41,790]	Job JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml execution complete at  11:20:41 06/06/2013 and reports: null
+[2013-06-06 11:20:41,791]	Job DEFAULT.TestJob1 execution complete at  11:20:41 06/06/2013 and reports: hello
+[2013-06-06 11:20:41,790]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:20:41 CST 2013, fired by: GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats
+[2013-06-06 11:20:41,791]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:20:41,791]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:20:41,791]	Job GroupOfTestJob2.TestJob2 execution complete at  11:20:41 06/06/2013 and reports: hello
+[2013-06-06 11:20:41,791]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinuteOnThe45thSecond) at:  11:20:41 06/06/2013
+[2013-06-06 11:20:41,792]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:20:41 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinuteOnThe45thSecond
+[2013-06-06 11:20:41,792]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:20:41,792]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:20:41,793]	Job GroupOfTestJob2.TestJob2 execution complete at  11:20:41 06/06/2013 and reports: hello
+[2013-06-06 11:20:46,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:20:46 06/06/2013
+[2013-06-06 11:20:46,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:20:46 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:20:46,668]	Job DEFAULT.TestJob1 execution complete at  11:20:46 06/06/2013 and reports: hello
+[2013-06-06 11:20:51,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:20:51 06/06/2013
+[2013-06-06 11:20:51,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:20:51 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:20:51,668]	Job DEFAULT.TestJob1 execution complete at  11:20:51 06/06/2013 and reports: hello
+[2013-06-06 11:20:51,771]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats) at:  11:20:51 06/06/2013
+[2013-06-06 11:20:51,772]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:20:51 CST 2013, fired by: GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats
+[2013-06-06 11:20:51,772]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:20:51,772]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:20:51,773]	Job GroupOfTestJob2.TestJob2 execution complete at  11:20:51 06/06/2013 and reports: hello
+[2013-06-06 11:20:56,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:20:56 06/06/2013
+[2013-06-06 11:20:56,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:20:56 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:20:56,668]	Job DEFAULT.TestJob1 execution complete at  11:20:56 06/06/2013 and reports: hello
+[2013-06-06 11:21:00,002]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute) at:  11:21:00 06/06/2013
+[2013-06-06 11:21:00,002]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:21:00 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute
+[2013-06-06 11:21:00,002]	 - jobDataMap entry: someKey = overriddenValue
+[2013-06-06 11:21:00,002]	 - jobDataMap entry: someOtherKey = someOtherOverriddenValue
+[2013-06-06 11:21:00,002]	Job GroupOfTestJob2.TestJob2 execution complete at  11:21:00 06/06/2013 and reports: hello
+[2013-06-06 11:21:01,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:01 06/06/2013
+[2013-06-06 11:21:01,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:01 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:01,668]	Job DEFAULT.TestJob1 execution complete at  11:21:01 06/06/2013 and reports: hello
+[2013-06-06 11:21:01,771]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats) at:  11:21:01 06/06/2013
+[2013-06-06 11:21:01,771]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:21:01 CST 2013, fired by: GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats
+[2013-06-06 11:21:01,771]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:21:01,771]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:21:01,772]	Job GroupOfTestJob2.TestJob2 execution complete at  11:21:01 06/06/2013 and reports: hello
+[2013-06-06 11:21:06,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:06 06/06/2013
+[2013-06-06 11:21:06,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:06 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:06,668]	Job DEFAULT.TestJob1 execution complete at  11:21:06 06/06/2013 and reports: hello
+[2013-06-06 11:21:11,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:11 06/06/2013
+[2013-06-06 11:21:11,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:11 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:11,668]	Job DEFAULT.TestJob1 execution complete at  11:21:11 06/06/2013 and reports: hello
+[2013-06-06 11:21:11,770]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats) at:  11:21:11 06/06/2013
+[2013-06-06 11:21:11,771]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:21:11 CST 2013, fired by: GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats
+[2013-06-06 11:21:11,771]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:21:11,771]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:21:11,771]	Job GroupOfTestJob2.TestJob2 execution complete at  11:21:11 06/06/2013 and reports: hello
+[2013-06-06 11:21:16,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:16 06/06/2013
+[2013-06-06 11:21:16,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:16 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:16,669]	Job DEFAULT.TestJob1 execution complete at  11:21:16 06/06/2013 and reports: hello
+[2013-06-06 11:21:21,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:21 06/06/2013
+[2013-06-06 11:21:21,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:21 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:21,668]	Job DEFAULT.TestJob1 execution complete at  11:21:21 06/06/2013 and reports: hello
+[2013-06-06 11:21:21,771]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats) at:  11:21:21 06/06/2013
+[2013-06-06 11:21:21,772]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:21:21 CST 2013, fired by: GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats
+[2013-06-06 11:21:21,772]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:21:21,772]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:21:21,774]	Job GroupOfTestJob2.TestJob2 execution complete at  11:21:21 06/06/2013 and reports: hello
+[2013-06-06 11:21:26,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:26 06/06/2013
+[2013-06-06 11:21:26,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:26 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:26,668]	Job DEFAULT.TestJob1 execution complete at  11:21:26 06/06/2013 and reports: hello
+[2013-06-06 11:21:31,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:31 06/06/2013
+[2013-06-06 11:21:31,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:31 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:31,668]	Job DEFAULT.TestJob1 execution complete at  11:21:31 06/06/2013 and reports: hello
+[2013-06-06 11:21:31,770]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats) at:  11:21:31 06/06/2013
+[2013-06-06 11:21:31,771]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:21:31 CST 2013, fired by: GroupOfTestJob2Triggers.TestSimpleTrigger2AtTenSecondIntervalAndFiveRepeats
+[2013-06-06 11:21:31,771]	 - jobDataMap entry: someKey = someValue
+[2013-06-06 11:21:31,771]	 - jobDataMap entry: someOtherKey = someOtherValue
+[2013-06-06 11:21:31,771]	Job GroupOfTestJob2.TestJob2 execution complete at  11:21:31 06/06/2013 and reports: hello
+[2013-06-06 11:21:36,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:36 06/06/2013
+[2013-06-06 11:21:36,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:36 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:36,669]	Job DEFAULT.TestJob1 execution complete at  11:21:36 06/06/2013 and reports: hello
+[2013-06-06 11:21:41,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:41 06/06/2013
+[2013-06-06 11:21:41,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:41 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:41,668]	Job DEFAULT.TestJob1 execution complete at  11:21:41 06/06/2013 and reports: hello
+[2013-06-06 11:21:46,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:46 06/06/2013
+[2013-06-06 11:21:46,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:46 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:46,668]	Job DEFAULT.TestJob1 execution complete at  11:21:46 06/06/2013 and reports: hello
+[2013-06-06 11:21:51,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:51 06/06/2013
+[2013-06-06 11:21:51,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:51 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:51,669]	Job DEFAULT.TestJob1 execution complete at  11:21:51 06/06/2013 and reports: hello
+[2013-06-06 11:21:56,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:21:56 06/06/2013
+[2013-06-06 11:21:56,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:21:56 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:21:56,668]	Job DEFAULT.TestJob1 execution complete at  11:21:56 06/06/2013 and reports: hello
+[2013-06-06 11:22:00,003]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute) at:  11:22:00 06/06/2013
+[2013-06-06 11:22:00,003]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:22:00 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute
+[2013-06-06 11:22:00,003]	 - jobDataMap entry: someKey = overriddenValue
+[2013-06-06 11:22:00,004]	 - jobDataMap entry: someOtherKey = someOtherOverriddenValue
+[2013-06-06 11:22:00,004]	Job GroupOfTestJob2.TestJob2 execution complete at  11:22:00 06/06/2013 and reports: hello
+[2013-06-06 11:22:01,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:01 06/06/2013
+[2013-06-06 11:22:01,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:01 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:01,669]	Job DEFAULT.TestJob1 execution complete at  11:22:01 06/06/2013 and reports: hello
+[2013-06-06 11:22:06,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:06 06/06/2013
+[2013-06-06 11:22:06,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:06 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:06,668]	Job DEFAULT.TestJob1 execution complete at  11:22:06 06/06/2013 and reports: hello
+[2013-06-06 11:22:11,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:11 06/06/2013
+[2013-06-06 11:22:11,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:11 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:11,669]	Job DEFAULT.TestJob1 execution complete at  11:22:11 06/06/2013 and reports: hello
+[2013-06-06 11:22:16,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:16 06/06/2013
+[2013-06-06 11:22:16,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:16 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:16,668]	Job DEFAULT.TestJob1 execution complete at  11:22:16 06/06/2013 and reports: hello
+[2013-06-06 11:22:21,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:21 06/06/2013
+[2013-06-06 11:22:21,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:21 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:21,668]	Job DEFAULT.TestJob1 execution complete at  11:22:21 06/06/2013 and reports: hello
+[2013-06-06 11:22:26,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:26 06/06/2013
+[2013-06-06 11:22:26,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:26 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:26,669]	Job DEFAULT.TestJob1 execution complete at  11:22:26 06/06/2013 and reports: hello
+[2013-06-06 11:22:31,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:31 06/06/2013
+[2013-06-06 11:22:31,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:31 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:31,668]	Job DEFAULT.TestJob1 execution complete at  11:22:31 06/06/2013 and reports: hello
+[2013-06-06 11:22:36,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:36 06/06/2013
+[2013-06-06 11:22:36,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:36 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:36,668]	Job DEFAULT.TestJob1 execution complete at  11:22:36 06/06/2013 and reports: hello
+[2013-06-06 11:22:41,066]	Job JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml fired (by trigger JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml) at:  11:22:41 06/06/2013
+[2013-06-06 11:22:41,067]	Job JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml execution complete at  11:22:41 06/06/2013 and reports: null
+[2013-06-06 11:22:41,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:41 06/06/2013
+[2013-06-06 11:22:41,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:41 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:41,668]	Job DEFAULT.TestJob1 execution complete at  11:22:41 06/06/2013 and reports: hello
+[2013-06-06 11:22:46,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:46 06/06/2013
+[2013-06-06 11:22:46,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:46 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:46,669]	Job DEFAULT.TestJob1 execution complete at  11:22:46 06/06/2013 and reports: hello
+[2013-06-06 11:22:51,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:51 06/06/2013
+[2013-06-06 11:22:51,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:51 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:51,668]	Job DEFAULT.TestJob1 execution complete at  11:22:51 06/06/2013 and reports: hello
+[2013-06-06 11:22:56,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:22:56 06/06/2013
+[2013-06-06 11:22:56,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:22:56 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:22:56,668]	Job DEFAULT.TestJob1 execution complete at  11:22:56 06/06/2013 and reports: hello
+[2013-06-06 11:23:00,001]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute) at:  11:23:00 06/06/2013
+[2013-06-06 11:23:00,002]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:23:00 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute
+[2013-06-06 11:23:00,002]	 - jobDataMap entry: someKey = overriddenValue
+[2013-06-06 11:23:00,002]	 - jobDataMap entry: someOtherKey = someOtherOverriddenValue
+[2013-06-06 11:23:00,002]	Job GroupOfTestJob2.TestJob2 execution complete at  11:23:00 06/06/2013 and reports: hello
+[2013-06-06 11:23:01,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:01 06/06/2013
+[2013-06-06 11:23:01,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:01 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:01,669]	Job DEFAULT.TestJob1 execution complete at  11:23:01 06/06/2013 and reports: hello
+[2013-06-06 11:23:06,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:06 06/06/2013
+[2013-06-06 11:23:06,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:06 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:06,668]	Job DEFAULT.TestJob1 execution complete at  11:23:06 06/06/2013 and reports: hello
+[2013-06-06 11:23:11,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:11 06/06/2013
+[2013-06-06 11:23:11,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:11 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:11,668]	Job DEFAULT.TestJob1 execution complete at  11:23:11 06/06/2013 and reports: hello
+[2013-06-06 11:23:16,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:16 06/06/2013
+[2013-06-06 11:23:16,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:16 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:16,668]	Job DEFAULT.TestJob1 execution complete at  11:23:16 06/06/2013 and reports: hello
+[2013-06-06 11:23:21,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:21 06/06/2013
+[2013-06-06 11:23:21,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:21 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:21,668]	Job DEFAULT.TestJob1 execution complete at  11:23:21 06/06/2013 and reports: hello
+[2013-06-06 11:23:26,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:26 06/06/2013
+[2013-06-06 11:23:26,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:26 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:26,668]	Job DEFAULT.TestJob1 execution complete at  11:23:26 06/06/2013 and reports: hello
+[2013-06-06 11:23:31,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:31 06/06/2013
+[2013-06-06 11:23:31,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:31 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:31,668]	Job DEFAULT.TestJob1 execution complete at  11:23:31 06/06/2013 and reports: hello
+[2013-06-06 11:23:36,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:36 06/06/2013
+[2013-06-06 11:23:36,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:36 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:36,669]	Job DEFAULT.TestJob1 execution complete at  11:23:36 06/06/2013 and reports: hello
+[2013-06-06 11:23:41,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:41 06/06/2013
+[2013-06-06 11:23:41,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:41 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:41,668]	Job DEFAULT.TestJob1 execution complete at  11:23:41 06/06/2013 and reports: hello
+[2013-06-06 11:23:46,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:46 06/06/2013
+[2013-06-06 11:23:46,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:46 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:46,668]	Job DEFAULT.TestJob1 execution complete at  11:23:46 06/06/2013 and reports: hello
+[2013-06-06 11:23:51,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:51 06/06/2013
+[2013-06-06 11:23:51,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:51 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:51,668]	Job DEFAULT.TestJob1 execution complete at  11:23:51 06/06/2013 and reports: hello
+[2013-06-06 11:23:56,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:23:56 06/06/2013
+[2013-06-06 11:23:56,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:23:56 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:23:56,669]	Job DEFAULT.TestJob1 execution complete at  11:23:56 06/06/2013 and reports: hello
+[2013-06-06 11:24:00,001]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute) at:  11:24:00 06/06/2013
+[2013-06-06 11:24:00,002]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:24:00 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute
+[2013-06-06 11:24:00,002]	 - jobDataMap entry: someKey = overriddenValue
+[2013-06-06 11:24:00,002]	 - jobDataMap entry: someOtherKey = someOtherOverriddenValue
+[2013-06-06 11:24:00,002]	Job GroupOfTestJob2.TestJob2 execution complete at  11:24:00 06/06/2013 and reports: hello
+[2013-06-06 11:24:01,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:01 06/06/2013
+[2013-06-06 11:24:01,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:01 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:01,668]	Job DEFAULT.TestJob1 execution complete at  11:24:01 06/06/2013 and reports: hello
+[2013-06-06 11:24:06,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:06 06/06/2013
+[2013-06-06 11:24:06,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:06 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:06,668]	Job DEFAULT.TestJob1 execution complete at  11:24:06 06/06/2013 and reports: hello
+[2013-06-06 11:24:11,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:11 06/06/2013
+[2013-06-06 11:24:11,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:11 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:11,669]	Job DEFAULT.TestJob1 execution complete at  11:24:11 06/06/2013 and reports: hello
+[2013-06-06 11:24:16,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:16 06/06/2013
+[2013-06-06 11:24:16,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:16 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:16,668]	Job DEFAULT.TestJob1 execution complete at  11:24:16 06/06/2013 and reports: hello
+[2013-06-06 11:24:21,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:21 06/06/2013
+[2013-06-06 11:24:21,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:21 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:21,668]	Job DEFAULT.TestJob1 execution complete at  11:24:21 06/06/2013 and reports: hello
+[2013-06-06 11:24:26,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:26 06/06/2013
+[2013-06-06 11:24:26,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:26 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:26,668]	Job DEFAULT.TestJob1 execution complete at  11:24:26 06/06/2013 and reports: hello
+[2013-06-06 11:24:31,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:31 06/06/2013
+[2013-06-06 11:24:31,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:31 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:31,669]	Job DEFAULT.TestJob1 execution complete at  11:24:31 06/06/2013 and reports: hello
+[2013-06-06 11:24:36,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:36 06/06/2013
+[2013-06-06 11:24:36,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:36 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:36,668]	Job DEFAULT.TestJob1 execution complete at  11:24:36 06/06/2013 and reports: hello
+[2013-06-06 11:24:41,066]	Job JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml fired (by trigger JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml) at:  11:24:41 06/06/2013
+[2013-06-06 11:24:41,067]	Job JobSchedulingDataLoaderPlugin.JobSchedulingDataLoaderPlugin_jobInitializer_quartz_data_xml execution complete at  11:24:41 06/06/2013 and reports: null
+[2013-06-06 11:24:41,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:41 06/06/2013
+[2013-06-06 11:24:41,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:41 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:41,668]	Job DEFAULT.TestJob1 execution complete at  11:24:41 06/06/2013 and reports: hello
+[2013-06-06 11:24:46,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:46 06/06/2013
+[2013-06-06 11:24:46,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:46 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:46,669]	Job DEFAULT.TestJob1 execution complete at  11:24:46 06/06/2013 and reports: hello
+[2013-06-06 11:24:51,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:51 06/06/2013
+[2013-06-06 11:24:51,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:51 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:51,668]	Job DEFAULT.TestJob1 execution complete at  11:24:51 06/06/2013 and reports: hello
+[2013-06-06 11:24:56,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:24:56 06/06/2013
+[2013-06-06 11:24:56,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:24:56 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:24:56,668]	Job DEFAULT.TestJob1 execution complete at  11:24:56 06/06/2013 and reports: hello
+[2013-06-06 11:25:00,002]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute) at:  11:25:00 06/06/2013
+[2013-06-06 11:25:00,002]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:25:00 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute
+[2013-06-06 11:25:00,003]	 - jobDataMap entry: someKey = overriddenValue
+[2013-06-06 11:25:00,003]	 - jobDataMap entry: someOtherKey = someOtherOverriddenValue
+[2013-06-06 11:25:00,003]	Job GroupOfTestJob2.TestJob2 execution complete at  11:25:00 06/06/2013 and reports: hello
+[2013-06-06 11:25:01,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:01 06/06/2013
+[2013-06-06 11:25:01,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:01 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:01,668]	Job DEFAULT.TestJob1 execution complete at  11:25:01 06/06/2013 and reports: hello
+[2013-06-06 11:25:06,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:06 06/06/2013
+[2013-06-06 11:25:06,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:06 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:06,669]	Job DEFAULT.TestJob1 execution complete at  11:25:06 06/06/2013 and reports: hello
+[2013-06-06 11:25:11,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:11 06/06/2013
+[2013-06-06 11:25:11,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:11 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:11,668]	Job DEFAULT.TestJob1 execution complete at  11:25:11 06/06/2013 and reports: hello
+[2013-06-06 11:25:16,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:16 06/06/2013
+[2013-06-06 11:25:16,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:16 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:16,668]	Job DEFAULT.TestJob1 execution complete at  11:25:16 06/06/2013 and reports: hello
+[2013-06-06 11:25:21,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:21 06/06/2013
+[2013-06-06 11:25:21,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:21 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:21,668]	Job DEFAULT.TestJob1 execution complete at  11:25:21 06/06/2013 and reports: hello
+[2013-06-06 11:25:26,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:26 06/06/2013
+[2013-06-06 11:25:26,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:26 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:26,668]	Job DEFAULT.TestJob1 execution complete at  11:25:26 06/06/2013 and reports: hello
+[2013-06-06 11:25:31,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:31 06/06/2013
+[2013-06-06 11:25:31,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:31 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:31,668]	Job DEFAULT.TestJob1 execution complete at  11:25:31 06/06/2013 and reports: hello
+[2013-06-06 11:25:36,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:36 06/06/2013
+[2013-06-06 11:25:36,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:36 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:36,668]	Job DEFAULT.TestJob1 execution complete at  11:25:36 06/06/2013 and reports: hello
+[2013-06-06 11:25:41,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:41 06/06/2013
+[2013-06-06 11:25:41,670]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:41 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:41,670]	Job DEFAULT.TestJob1 execution complete at  11:25:41 06/06/2013 and reports: hello
+[2013-06-06 11:25:46,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:46 06/06/2013
+[2013-06-06 11:25:46,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:46 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:46,668]	Job DEFAULT.TestJob1 execution complete at  11:25:46 06/06/2013 and reports: hello
+[2013-06-06 11:25:51,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:51 06/06/2013
+[2013-06-06 11:25:51,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:51 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:51,668]	Job DEFAULT.TestJob1 execution complete at  11:25:51 06/06/2013 and reports: hello
+[2013-06-06 11:25:56,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:25:56 06/06/2013
+[2013-06-06 11:25:56,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:25:56 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:25:56,669]	Job DEFAULT.TestJob1 execution complete at  11:25:56 06/06/2013 and reports: hello
+[2013-06-06 11:26:00,001]	Job GroupOfTestJob2.TestJob2 fired (by trigger GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute) at:  11:26:00 06/06/2013
+[2013-06-06 11:26:00,002]	Executing job: GroupOfTestJob2.TestJob2 executing at Thu Jun 06 11:26:00 CST 2013, fired by: GroupOfTestJob2Triggers.TestCronTrigger2AtEveryMinute
+[2013-06-06 11:26:00,002]	 - jobDataMap entry: someKey = overriddenValue
+[2013-06-06 11:26:00,002]	 - jobDataMap entry: someOtherKey = someOtherOverriddenValue
+[2013-06-06 11:26:00,002]	Job GroupOfTestJob2.TestJob2 execution complete at  11:26:00 06/06/2013 and reports: hello
+[2013-06-06 11:26:01,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:01 06/06/2013
+[2013-06-06 11:26:01,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:01 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:01,668]	Job DEFAULT.TestJob1 execution complete at  11:26:01 06/06/2013 and reports: hello
+[2013-06-06 11:26:06,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:06 06/06/2013
+[2013-06-06 11:26:06,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:06 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:06,668]	Job DEFAULT.TestJob1 execution complete at  11:26:06 06/06/2013 and reports: hello
+[2013-06-06 11:26:11,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:11 06/06/2013
+[2013-06-06 11:26:11,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:11 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:11,669]	Job DEFAULT.TestJob1 execution complete at  11:26:11 06/06/2013 and reports: hello
+[2013-06-06 11:26:16,668]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:16 06/06/2013
+[2013-06-06 11:26:16,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:16 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:16,669]	Job DEFAULT.TestJob1 execution complete at  11:26:16 06/06/2013 and reports: hello
+[2013-06-06 11:26:21,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:21 06/06/2013
+[2013-06-06 11:26:21,667]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:21 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:21,667]	Job DEFAULT.TestJob1 execution complete at  11:26:21 06/06/2013 and reports: hello
+[2013-06-06 11:26:26,667]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:26 06/06/2013
+[2013-06-06 11:26:26,668]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:26 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:26,672]	Job DEFAULT.TestJob1 execution complete at  11:26:26 06/06/2013 and reports: hello
+[2013-06-06 11:26:31,669]	Job DEFAULT.TestJob1 fired (by trigger DEFAULT.TestSimpleTrigger1AtFiveSecondInterval) at:  11:26:31 06/06/2013
+[2013-06-06 11:26:31,669]	Executing job: DEFAULT.TestJob1 executing at Thu Jun 06 11:26:31 CST 2013, fired by: DEFAULT.TestSimpleTrigger1AtFiveSecondInterval
+[2013-06-06 11:26:31,670]	Job DEFAULT.TestJob1 execution complete at  11:26:31 06/06/2013 and reports: hello
+[2013-06-06 11:26:31,790]	------- Shutting Down ---------------------
+[2013-06-06 11:26:31,790]	Scheduler TestScheduler_$_NON_CLUSTERED shutting down.
+[2013-06-06 11:26:31,790]	Scheduler TestScheduler_$_NON_CLUSTERED paused.
+[2013-06-06 11:26:32,173]	Scheduler TestScheduler_$_NON_CLUSTERED shutdown complete.
+[2013-06-06 11:26:32,173]	------- Shutdown Complete -----------------
+[2013-06-06 11:26:32,173]	Executed 87 jobs.
+[2013-06-06 13:40:07,630]	------- Initializing ----------------------
+[2013-06-06 13:40:07,677]	Using default implementation for ThreadExecutor
+[2013-06-06 13:40:07,694]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-06 13:40:07,694]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-06 13:40:07,697]	Registering Quartz Job Initialization Plug-in.
+[2013-06-06 13:40:07,698]	RAMJobStore initialized.
+[2013-06-06 13:40:07,698]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'TestScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 3 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-06 13:40:07,699]	Quartz scheduler 'TestScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-06 13:40:07,699]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-06 13:40:07,699]	------- Initialization Complete -----------
+[2013-06-06 13:40:07,699]	------- Scheduling Jobs -------------------
+[2013-06-06 13:40:07,708]	group1.interruptableJob1 will run at: Thu Jun 06 13:40:15 CST 2013 and repeat: -1 times, every 5 seconds
+[2013-06-06 13:45:00,849]	Unable to load local schema packaged in quartz distribution jar. Utilizing schema online at http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd
+[2013-06-06 13:45:36,189]	Parsing XML file: quartz_data.xml with systemId: quartz_data.xml
