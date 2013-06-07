@@ -16,9 +16,9 @@ public class MySqlAction {
 	//启动中的任务
 	String selectSql = "SELECT taskId, name, execTime, programUrl, " +
 			"pluralFlag, parameter, repeatTime, repeatUnit, updateTime " +
-			"FROM pdc_aide.scheduletaskinfo where status=1";
+			"FROM pdc_aide.schedule_task_info where status=1";
 	//过期任务暂停
-	String updateSql = "update pdc_aide.scheduletaskinfo set status  = 2 where deadTime > timestamp('0000-00-00 00:00:00') and deadtime < timestamp(now())";
+	String updateSql = "update pdc_aide.schedule_task_info set status  = 2 where deadTime > timestamp('0000-00-00 00:00:00') and deadtime < timestamp(now())";
 
 	public void setTaskInfo() {
 		MySqlService service = new MySqlService();
@@ -28,10 +28,10 @@ public class MySqlAction {
 			stmt = service.getConnection().createStatement();
 			stmt.execute(updateSql);
 			rs = stmt.executeQuery(selectSql);
-			Constants.taskInfoMap.clear();
+			Constants.currentTaskInfoMap.clear();
 			while (rs.next()) {
 				ScheduleTaskInfoBean taskInfo = new ScheduleTaskInfoBean();
-				taskInfo.setTaskId(rs.getInt("taskId"));
+				taskInfo.setTaskId(rs.getString("taskId"));
 				taskInfo.setName(rs.getString("name"));
 				taskInfo.setExecTime(rs.getTimestamp("execTime"));
 				taskInfo.setProgramUrl(rs.getString("programUrl"));
@@ -39,7 +39,7 @@ public class MySqlAction {
 				taskInfo.setParameter(rs.getString("parameter"));
 				taskInfo.setRepeatTime(rs.getInt("repeatTime"));
 				taskInfo.setRepeatUnit(rs.getString("repeatUnit"));
-				Constants.taskInfoMap.put(taskInfo.getTaskId(), taskInfo);
+				Constants.currentTaskInfoMap.put(taskInfo.getJobKey(), taskInfo);
 			}
 		} catch (SQLException e) {
 			log.error("定时任务信息读取失败！");

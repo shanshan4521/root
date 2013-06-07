@@ -2,10 +2,12 @@ package com.axon.mercenary.db;
 
 import java.util.Date;
 
+import org.quartz.TriggerKey;
+
 public class ScheduleTaskInfoBean {
 
 	// 任务编号
-	private int taskId = -1;
+	private String taskId = "";
 
 	// 名称
 	private String name = "";
@@ -57,11 +59,11 @@ public class ScheduleTaskInfoBean {
 	// 规则添加人
 	private String updateUser = "";
 
-	public int getTaskId() {
+	public String getTaskId() {
 		return taskId;
 	}
 
-	public void setTaskId(int taskId) {
+	public void setTaskId(String taskId) {
 		this.taskId = taskId;
 	}
 
@@ -199,5 +201,10 @@ public class ScheduleTaskInfoBean {
 			ret = true;
 		}
 		return ret;
+	}
+
+	public String getJobKey() {
+
+		 return "["+this.taskId+"]:"+this.name;
 	}
 }

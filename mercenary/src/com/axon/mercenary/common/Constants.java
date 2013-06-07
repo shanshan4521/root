@@ -14,7 +14,7 @@ public class Constants {
 	public static final String MYSQL_USER = "mySqlUserName";
 	public static final String MYSQL_PW = "mySqlPassWord";
 	
-	public static HashMap taskInfoMap = new HashMap<String, ScheduleTaskInfoBean>();
-	public static ConcurrentHashMap currentTaskInfoMap = new ConcurrentHashMap<String, ScheduleTaskInfoBean>();
+	public static HashMap currentTaskInfoMap = new HashMap<String, ScheduleTaskInfoBean>();
+	public static HashMap oldTaskInfoMap = new HashMap<String, ScheduleTaskInfoBean>();
 	
 }
