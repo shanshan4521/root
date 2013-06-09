@@ -1,15 +1,16 @@
 package com.axon.mercenary;
 
-import static org.quartz.DateBuilder.nextGivenSecondDate;
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 import static org.quartz.TriggerBuilder.newTrigger;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
@@ -23,8 +24,6 @@ import org.slf4j.LoggerFactory;
 import com.axon.mercenary.common.Constants;
 import com.axon.mercenary.db.MySqlAction;
 import com.axon.mercenary.db.ScheduleTaskInfoBean;
-import com.axon.mercenary.mail.MailSenderInfoBean;
-import com.axon.mercenary.mail.SimpleMailSender;
 
 //public class TaskControl implements Runnable {
 public class TaskControl {
@@ -43,15 +42,18 @@ public class TaskControl {
 			log.error(e.toString());
 			return;
 		}
-
 		log.info("任务控制器更新开始。");
-
 		while (true) {
 			MySqlAction action = new MySqlAction();
 			// 取得最新的任务信息
 			try {
 				action.setTaskInfo();
 			} catch (SQLException e) {
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e1) {
+					
+				}
 				continue;
 			}
 
@@ -60,6 +62,12 @@ public class TaskControl {
 
 			// 加载新任务
 			installTask(sched);
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				
+			}
 		}
 	}
 
@@ -70,6 +78,7 @@ public class TaskControl {
 		// 配置表中最新的任务
 		HashMap<String, ScheduleTaskInfoBean> currentTaskInfoMap = Constants.currentTaskInfoMap;
 
+		ArrayList<String> removeList = new ArrayList<String>();
 		// 遍历最新的任务信息
 		Iterator<?> iter = oldTaskInfoMap.keySet().iterator();
 		while (iter.hasNext()) {
@@ -88,7 +97,7 @@ public class TaskControl {
 						// 将有更新的任务从任务控制器中卸载
 						sched.unscheduleJob(new TriggerKey(oldTask.getJobKey(),
 								null));
-						oldTaskInfoMap.remove(oldTask.getJobKey());
+						removeList.add(oldTask.getJobKey());
 					} catch (SchedulerException e) {
 						// 卸载任务失败
 						log.error("更新任务失败：" + currentTask.getJobKey());
@@ -99,14 +108,17 @@ public class TaskControl {
 					// 将已过期，停止，删除的任务从任务控制器中卸载
 					sched.unscheduleJob(new TriggerKey(oldTask.getJobKey(),
 							null));
-					oldTaskInfoMap.remove(oldTask.getJobKey());
+					removeList.add(oldTask.getJobKey());
 				} catch (SchedulerException e) {
 					// 卸载任务失败
 					log.error("卸载任务失败：" + oldTask.getJobKey());
 				}
 			}
 		}
-
+		for(int i = 0 ; i < removeList.size(); i++){
+			oldTaskInfoMap.remove(removeList.get(i));
+			log.info(removeList.get(i));
+		}
 	}
 
 	private void installTask(Scheduler sched) {
@@ -127,8 +139,8 @@ public class TaskControl {
 				// 需要执行的认识是否已在任务控制器中
 				if (!oldTaskInfoMap.containsKey(key)) {
 					// 第一次执行时间
-					// Date startTime = currentTask.getExecTime();
-					Date startTime = nextGivenSecondDate(null, 5);
+					Date startTime = currentTask.getExecTime();
+					//Date startTime = nextGivenSecondDate(null, 5);
 
 					JobDetail job = newJob(DumbInterruptableJob.class)
 							.withIdentity(currentTask.getJobKey()).build();
@@ -153,38 +165,19 @@ public class TaskControl {
 								.withIdentity(currentTask.getJobKey())
 								.startAt(startTime).build();
 					}
-					Date ft = sched.scheduleJob(job, trigger);
+					sched.scheduleJob(job, trigger);
 					oldTaskInfoMap.put(key, currentTask);
 				}
 			} catch (SchedulerException e) {
-
 			}
-
 		}
-
 	}
 
-	public static void main2(String[] args) throws Exception {
-
+	public static void main(String[] args) throws Exception {
+		PropertyConfigurator.configure("log4j.properties");
 		TaskControl example = new TaskControl();
 		example.run();
 	}
 
-	public static void sendmain(String[] args) {
-		// 这个类主要是设置邮件
-		MailSenderInfoBean mailInfo = new MailSenderInfoBean();
-		mailInfo.setMailServerHost("smtp.qiye.163.com");
-		mailInfo.setMailServerPort("25");
-		mailInfo.setValidate(true);
-		mailInfo.setUserName("dingl@axon.com.cn");
-		mailInfo.setPassword("4256425613");// 您的邮箱密码
-		mailInfo.setFromAddress("dingl@axon.com.cn");
-		mailInfo.setToAddress("dingl@axon.com.cn");
-		mailInfo.setSubject("设置邮箱标题");
-		mailInfo.setContent("设置邮箱内容");
-		// 发送邮件
-		SimpleMailSender sms = new SimpleMailSender();
-		sms.sendTextMail(mailInfo);// 发送文体格式
-		sms.sendHtmlMail(mailInfo);// 发送html格式
-	}
+
 }

@@ -65,7 +65,7 @@ public class SimpleMailSender {
 	 * @param mailInfo
 	 *            待发送的邮件信息
 	 */
-	public static boolean sendHtmlMail(MailSenderInfoBean mailInfo) {
+	public boolean sendHtmlMail(MailSenderInfoBean mailInfo) {
 		// 判断是否需要身份认证
 		MyAuthenticator authenticator = null;
 		Properties pro = mailInfo.getProperties();
@@ -108,5 +108,24 @@ public class SimpleMailSender {
 			ex.printStackTrace();
 		}
 		return false;
+	}
+	
+	public static void main(String[] args) {
+		// 这个类主要是设置邮件
+		MailSenderInfoBean mailInfo = new MailSenderInfoBean();
+		mailInfo.setMailServerHost("smtp.qiye.163.com");
+		mailInfo.setMailServerPort("25");
+		mailInfo.setValidate(true);
+		mailInfo.setUserName("dingl@axon.com.cn");
+		// 邮箱密码
+		mailInfo.setPassword("dingl@axon");
+		mailInfo.setFromAddress("dingl@axon.com.cn");
+		mailInfo.setToAddress("dingl@axon.com.cn");
+		mailInfo.setSubject("设置邮箱标题");
+		mailInfo.setContent("设置邮箱内容");
+		// 发送邮件
+		SimpleMailSender sms = new SimpleMailSender();
+		sms.sendTextMail(mailInfo);// 发送文体格式
+		sms.sendHtmlMail(mailInfo);// 发送html格式
 	}
 }

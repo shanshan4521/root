@@ -112,7 +112,8 @@ public class ScheduleTaskInfoBean {
 	}
 
 	public void setParameter(String parameter) {
-		this.parameter = parameter;
+		if(parameter != null)
+			this.parameter = parameter.trim();
 	}
 
 	public Date getDeadTime() {
@@ -189,7 +190,7 @@ public class ScheduleTaskInfoBean {
 
 	public boolean equals(ScheduleTaskInfoBean task) {
 		boolean ret = false;
-		if (this.taskId == task.getTaskId()
+		if (this.taskId.equals(task.getTaskId())
 				&& this.execTime.equals(task.getExecTime())
 				&& this.programUrl.equals(task.getProgramUrl())
 				&& this.status == task.getStatus()
@@ -202,7 +203,7 @@ public class ScheduleTaskInfoBean {
 		}
 		return ret;
 	}
-
+	
 	public String getJobKey() {
 		return "[" + this.taskId + "]:" + this.name;
 	}
