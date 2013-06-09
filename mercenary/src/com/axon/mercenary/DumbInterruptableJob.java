@@ -13,6 +13,9 @@ import org.quartz.JobExecutionException;
 import org.quartz.JobKey;
 import org.quartz.UnableToInterruptJobException;
 
+import com.axon.mercenary.common.Constants;
+import com.axon.mercenary.db.ScheduleTaskInfoBean;
+
 public class DumbInterruptableJob implements InterruptableJob {
 
 	// logging services
@@ -36,17 +39,36 @@ public class DumbInterruptableJob implements InterruptableJob {
 			throws JobExecutionException {
 
 		jobKey = context.getJobDetail().getKey();
-		log.info("---- " + jobKey + " executing at " + new Date());
 
+		boolean isComplete = false;
+		
 		try {
 			Process p = null;
 			BufferedReader br = null;
 
-			String exec = String.valueOf(context.getJobDetail().getJobDataMap()
-							.get("url"));
+			ScheduleTaskInfoBean task = (ScheduleTaskInfoBean) context
+					.getJobDetail().getJobDataMap().get(Constants.TASKBEAN);
+
 			try {
-				p = Runtime.getRuntime().exec(exec);
-				log.info("测试代码");
+				p = Runtime.getRuntime().exec(
+						task.getProgramUrl() + " " + task.getParameter());
+
+//				// 启动守护线程监控存储过程执行时间，超时时强制退出。
+//				Thread t = new Thread() {
+//					public void run() {
+//						try {
+//							Thread.sleep(24*60*60 * 1000);
+//							
+//						} catch (InterruptedException e) {
+//							return ;
+//						}
+//						p.destroy();
+//						
+//					}
+//				};
+//				t.setDaemon(true);
+//				t.start();
+				
 				br = new BufferedReader(new InputStreamReader(
 						p.getInputStream()));
 				String line = null;
@@ -61,15 +83,16 @@ public class DumbInterruptableJob implements InterruptableJob {
 					sb.append(line).append("\n");
 				}
 
-				if (p.waitFor() == 1) {
-					;
-				} else {
-					;
-				}
+				if (p.waitFor() == 0 && sb.toString().trim().length() == 0) {
+					isComplete = true;
+				} 
+				
 			} catch (IOException e1) {
-				;
+				log.error("任务执行失败：" + task.toString());
+				log.error(e1.toString());
 			} catch (InterruptedException e) {
-				;
+				log.error("任务执行失败：" + task.toString());
+				log.error(e.toString());
 			} finally {
 				if (br != null) {
 					try {
@@ -85,7 +108,7 @@ public class DumbInterruptableJob implements InterruptableJob {
 
 			// periodically check if we've been interrupted...
 			if (interrupted) {
-				log.info("--- " + jobKey + "  -- Interrupted... bailing out!");
+				log.info("--- " + jobKey + " 被终止。");
 				JobExecutionException e = new JobExecutionException("测试程序结束。");
 				throw e;
 			}
@@ -95,7 +118,6 @@ public class DumbInterruptableJob implements InterruptableJob {
 	}
 
 	public void interrupt() throws UnableToInterruptJobException {
-		log.info("---" + jobKey + "  -- INTERRUPTING --");
 		interrupted = true;
 	}
 

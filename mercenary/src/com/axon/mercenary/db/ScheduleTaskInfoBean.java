@@ -189,22 +189,46 @@ public class ScheduleTaskInfoBean {
 
 	public boolean equals(ScheduleTaskInfoBean task) {
 		boolean ret = false;
-		if(this.taskId == task.getTaskId()
-			&& this.execTime.equals(task.getExecTime())
-			&& this.programUrl.equals(task.getProgramUrl())
-			&& this.status == task.getStatus()
-			&& this.pluralFlag == task.getPluralFlag()
-			&& this.parameter.equals(task.getParameter())
-			&& this.deadTime.equals(task.getDeadTime())
-			&& this.repeatTime == task.getRepeatTime()
-			&& this.repeatUnit.equals(task.getRepeatUnit())){
+		if (this.taskId == task.getTaskId()
+				&& this.execTime.equals(task.getExecTime())
+				&& this.programUrl.equals(task.getProgramUrl())
+				&& this.status == task.getStatus()
+				&& this.pluralFlag == task.getPluralFlag()
+				&& this.parameter.equals(task.getParameter())
+				&& this.deadTime.equals(task.getDeadTime())
+				&& this.repeatTime == task.getRepeatTime()
+				&& this.repeatUnit.equals(task.getRepeatUnit())) {
 			ret = true;
 		}
 		return ret;
 	}
 
 	public String getJobKey() {
+		return "[" + this.taskId + "]:" + this.name;
+	}
 
-		 return "["+this.taskId+"]:"+this.name;
+	public int getRepeatMin() {
+		int time = 0;
+
+		if ("min".equals(this.repeatUnit.toLowerCase())) {
+			time = this.repeatTime;
+		} else if ("hour".equals(this.repeatUnit.toLowerCase())) {
+			time = this.repeatTime * 60;
+		} else if ("day".equals(this.repeatUnit.toLowerCase())) {
+			time = this.repeatTime * 60 * 24;
+		} else if ("month".equals(this.repeatUnit.toLowerCase())) {
+			time = this.repeatTime * 60 * 24 * 30;
+		}
+		return time;
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getJobKey()).append(",执行时间:").append(this.execTime)
+				.append(",间隔时间").append(this.repeatTime)
+				.append(this.repeatUnit).append(",任务内容:")
+				.append(this.programUrl).append(" ").append(this.parameter);
+
+		return sb.toString();
 	}
 }

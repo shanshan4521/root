@@ -20,7 +20,7 @@ public class MySqlAction {
 	//过期任务暂停
 	String updateSql = "update pdc_aide.schedule_task_info set status  = 2 where deadTime > timestamp('0000-00-00 00:00:00') and deadtime < timestamp(now())";
 
-	public void setTaskInfo() {
+	public void setTaskInfo() throws SQLException {
 		MySqlService service = new MySqlService();
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -36,7 +36,7 @@ public class MySqlAction {
 				taskInfo.setExecTime(rs.getTimestamp("execTime"));
 				taskInfo.setProgramUrl(rs.getString("programUrl"));
 				taskInfo.setPluralFlag(rs.getInt("pluralFlag"));
-				taskInfo.setParameter(rs.getString("parameter"));
+				taskInfo.setParameter(rs.getString("parameter").trim());
 				taskInfo.setRepeatTime(rs.getInt("repeatTime"));
 				taskInfo.setRepeatUnit(rs.getString("repeatUnit"));
 				Constants.currentTaskInfoMap.put(taskInfo.getJobKey(), taskInfo);
@@ -44,6 +44,7 @@ public class MySqlAction {
 		} catch (SQLException e) {
 			log.error("定时任务信息读取失败！");
 			log.error(e.toString());
+			throw e;
 		} finally {
 			service.releaseResultSet(rs);
 			service.releaseStatement(stmt);
