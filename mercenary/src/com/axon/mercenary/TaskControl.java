@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.axon.mercenary.common.Constants;
+import com.axon.mercenary.common.Util;
 import com.axon.mercenary.db.MySqlAction;
 import com.axon.mercenary.db.ScheduleTaskInfoBean;
 
@@ -175,8 +176,12 @@ public class TaskControl {
 
 	public static void main(String[] args) throws Exception {
 		PropertyConfigurator.configure("log4j.properties");
-		TaskControl example = new TaskControl();
-		example.run();
+		if(args.length > 0 && args[0].toLowerCase().equals("testmail")){
+			Util.sendMail("自动任务调度服务mail测试", "成功啦，~\\(≧▽≦)/~啦啦啦，O(∩_∩)O");
+		}else{
+			TaskControl example = new TaskControl();
+			example.run();
+		}
 	}
 
 

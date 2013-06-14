@@ -14,6 +14,8 @@ import org.quartz.JobExecutionException;
 import org.quartz.JobKey;
 
 import com.axon.mercenary.common.Constants;
+import com.axon.mercenary.common.ProcessConfig;
+import com.axon.mercenary.common.Util;
 import com.axon.mercenary.db.MySqlAction;
 import com.axon.mercenary.db.ScheduleTaskInfoBean;
 
@@ -42,7 +44,7 @@ public class DumbInterruptableJob implements Job {
 		Process p = null;
 		BufferedReader br = null;
 
-		ScheduleTaskInfoBean task = (ScheduleTaskInfoBean) context
+		final ScheduleTaskInfoBean task = (ScheduleTaskInfoBean) context
 				.getJobDetail().getJobDataMap().get(Constants.TASKBEAN);
 		try {
 			action.updateExecTime(task.getTaskId());
@@ -53,26 +55,35 @@ public class DumbInterruptableJob implements Job {
 			return;
 		}
 
+		if (task.getPluralFlag() == 0
+				&& Constants.executingJobList.contains(task.getJobKey())) {
+			log.error("任务" + jobKey + "还在执行中，启动失败！");
+			log.error(task.toString());
+			return;
+		}
+
+		Constants.executingJobList.add(task.getJobKey());
+
+		// 启动守护线程监控存储过程执行时间，超时时强制退出。
+		Thread t = new Thread() {
+			public void run() {
+				ProcessConfig config = ProcessConfig.getInstance();
+				int timeOut= config.getProperty2Int(Constants.TASK_TIMEOUT);
+				try {
+					Thread.sleep(timeOut * 60 * 1000);
+				} catch (InterruptedException e) {
+					return;
+				}
+				Util.sendMail("任务执行超时:"+task.getJobKey(), task.toString());
+			}
+		};
+		t.setDaemon(true);
+		t.start();
+
 		try {
 			try {
 				p = Runtime.getRuntime().exec(
 						task.getProgramUrl() + " " + task.getParameter());
-
-				// // 启动守护线程监控存储过程执行时间，超时时强制退出。
-				// Thread t = new Thread() {
-				// public void run() {
-				// try {
-				// Thread.sleep(24*60*60 * 1000);
-				//
-				// } catch (InterruptedException e) {
-				// return ;
-				// }
-				// p.destroy();
-				//
-				// }
-				// };
-				// t.setDaemon(true);
-				// t.start();
 
 				br = new BufferedReader(new InputStreamReader(
 						p.getInputStream()));
@@ -88,17 +99,26 @@ public class DumbInterruptableJob implements Job {
 					sb.append(line).append("\n");
 				}
 
-//				if (p.waitFor() == 0 && sb.toString().trim().length() == 0) {
+				// if (p.waitFor() == 0 && sb.toString().trim().length() == 0) {
 				if (p.waitFor() == 0) {
 					isComplete = true;
+				} else {
+					log.error("任务执行失败!");
+					log.error(task.toString());
+					log.error(sb.toString());
+					Util.sendMail("任务执行失败:"+task.getJobKey(), task.toString()+sb.toString());
 				}
 
 			} catch (IOException e1) {
-				log.error("任务执行失败：" + task.toString());
+				log.error("任务执行失败!");
+				log.error(task.toString());
 				log.error(e1.toString());
+				Util.sendMail("任务执行失败:"+task.getJobKey(), task.toString()+e1.toString());
 			} catch (InterruptedException e) {
-				log.error("任务执行失败：" + task.toString());
+				log.error("任务执行失败!");
+				log.error(task.toString());
 				log.error(e.toString());
+				Util.sendMail("任务执行失败:"+task.getJobKey(), task.toString()+e.toString());
 			} finally {
 				if (br != null) {
 					try {
@@ -110,17 +130,21 @@ public class DumbInterruptableJob implements Job {
 				if (p != null) {
 					p.destroy();
 				}
+				if(t != null){
+					t.interrupt();
+				}
 			}
-
 			try {
 				action.updateTaskResult(task.getTaskId(), isComplete);
 			} catch (SQLException e1) {
 				log.error("定时任务结果更新失败！");
 				log.error(task.toString());
 				log.error(e1.toString());
+				Util.sendMail("定时任务结果更新失败:"+task.getJobKey(), task.toString()+e1.toString());
 			}
 
 		} finally {
+			Constants.executingJobList.remove(task.getJobKey());
 			log.info("---- " + jobKey + " 结束在 " + new Date());
 		}
 	}

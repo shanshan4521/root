@@ -14,13 +14,13 @@ public class MySqlAction {
 	private Logger log = LoggerFactory.getLogger(MySqlService.class);
 
 	// 启动中的任务
-	String selectSql = "SELECT taskId, name, execTime, programUrl, "
-			+ "pluralFlag, parameter, deadTime,repeatTime, repeatUnit, updateTime "
+	String selectSql = "SELECT taskId, name, from_unixtime(execTime) as execTime, programUrl, "
+			+ "pluralFlag, parameter, from_unixtime(deadTime),repeatTime, repeatUnit "
 			+ "FROM pdc_aide.schedule_task_info where status=1";
 
 	// 过期任务暂停
 	String updateSql = "update pdc_aide.schedule_task_info set status  = 2 "
-			+ "where deadTime > timestamp('0000-00-00 00:00:00') and deadtime < timestamp(now())";
+			+ "where deadTime > 0 and deadtime < unix_timestamp(now())";
 
 	public void setTaskInfo() throws SQLException {
 		MySqlService service = new MySqlService();
@@ -61,7 +61,7 @@ public class MySqlAction {
 		// 任务结束更新结果和日期。
 		String updateTask = "update pdc_aide.schedule_task_info set result = '"
 				+ result
-				+ "' , lastExecTime = timestamp(now()) where taskId = "
+				+ "' , lastExecTime = unix_timestamp(now()) where taskId = "
 				+ taskId;
 
 		MySqlService service = new MySqlService();
@@ -80,12 +80,11 @@ public class MySqlAction {
 	public void updateExecTime(String taskId) throws SQLException {
 		// 任务结束更新结果和日期。
 		String updateTask = "update pdc_aide.schedule_task_info set "
-				+ " lastExecTime = timestamp(now()) ,updateTime =  timestamp(now()) ,"
-				+ " updateuser = 'mercenary' where taskId = " + taskId;
+				+ " lastExecTime = unix_timestamp(now())  where taskId = " + taskId;
 		// 任务结束初次执行时间。
 		String updateTaskFirstTime = "update pdc_aide.schedule_task_info set "
-				+ " firstExecTime = timestamp(now()) where firstExecTime is null "
-				+ " or firstExecTime < timestamp('2010-00-00 00:00:00') "
+				+ " firstExecTime = unix_timestamp(now()) where firstExecTime is null "
+				+ " or firstExecTime <= 0  "
 				+ " and taskId = " + taskId;
 
 		MySqlService service = new MySqlService();

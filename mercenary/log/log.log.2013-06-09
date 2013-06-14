@@ -1,0 +1,488 @@
+[2013-06-09 13:50:11,863]	Using default implementation for ThreadExecutor
+[2013-06-09 13:50:11,887]	Job execution threads will use class loader of thread: main
+[2013-06-09 13:50:11,898]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 13:50:11,900]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 13:50:11,901]	RAMJobStore initialized.
+[2013-06-09 13:50:11,901]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 13:50:11,902]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 13:50:11,902]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 13:50:11,902]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 13:50:11,902]	任务控制器更新开始。
+[2013-06-09 13:51:32,273]	Using default implementation for ThreadExecutor
+[2013-06-09 13:51:32,276]	Job execution threads will use class loader of thread: main
+[2013-06-09 13:51:32,287]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 13:51:32,289]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 13:51:32,289]	RAMJobStore initialized.
+[2013-06-09 13:51:32,290]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 13:51:32,290]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 13:51:32,290]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 13:51:32,290]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 13:51:32,291]	任务控制器更新开始。
+[2013-06-09 13:51:35,116]	定时任务信息读取失败！
+[2013-06-09 13:51:35,117]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'tsakId' in 'where clause'
+[2013-06-09 13:51:35,119]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 13:51:35 CST 2013
+[2013-06-09 13:51:40,019]	定时任务信息读取失败！
+[2013-06-09 13:51:40,019]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'tsakId' in 'where clause'
+[2013-06-09 13:51:40,019]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 13:51:40 CST 2013
+[2013-06-09 13:51:45,014]	定时任务信息读取失败！
+[2013-06-09 13:51:45,015]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'tsakId' in 'where clause'
+[2013-06-09 13:51:45,015]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 13:51:45 CST 2013
+[2013-06-09 13:55:29,898]	Using default implementation for ThreadExecutor
+[2013-06-09 13:55:29,902]	Job execution threads will use class loader of thread: main
+[2013-06-09 13:55:29,912]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 13:55:29,914]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 13:55:29,915]	RAMJobStore initialized.
+[2013-06-09 13:55:29,915]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 13:55:29,916]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 13:55:29,916]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 13:55:29,916]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 13:55:29,916]	任务控制器更新开始。
+[2013-06-09 13:55:35,035]	定时任务信息读取失败！
+[2013-06-09 13:55:35,035]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'true'
+[2013-06-09 13:55:35,039]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 13:55:35 CST 2013
+[2013-06-09 13:55:40,041]	定时任务信息读取失败！
+[2013-06-09 13:55:40,041]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'true'
+[2013-06-09 13:55:40,041]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 13:55:40 CST 2013
+[2013-06-09 13:55:45,015]	定时任务信息读取失败！
+[2013-06-09 13:55:45,015]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'true'
+[2013-06-09 13:55:45,016]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 13:55:45 CST 2013
+[2013-06-09 13:56:37,008]	Using default implementation for ThreadExecutor
+[2013-06-09 13:56:37,014]	Job execution threads will use class loader of thread: main
+[2013-06-09 13:56:37,035]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 13:56:37,038]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 13:56:37,039]	RAMJobStore initialized.
+[2013-06-09 13:56:37,041]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 13:56:37,041]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 13:56:37,041]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 13:56:37,041]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 13:56:37,041]	任务控制器更新开始。
+[2013-06-09 13:58:29,307]	Using default implementation for ThreadExecutor
+[2013-06-09 13:58:29,311]	Job execution threads will use class loader of thread: main
+[2013-06-09 13:58:29,328]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 13:58:29,331]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 13:58:29,332]	RAMJobStore initialized.
+[2013-06-09 13:58:29,333]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 13:58:29,333]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 13:58:29,333]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 13:58:29,333]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 13:58:29,334]	任务控制器更新开始。
+[2013-06-09 13:59:32,745]	Using default implementation for ThreadExecutor
+[2013-06-09 13:59:32,750]	Job execution threads will use class loader of thread: main
+[2013-06-09 13:59:32,768]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 13:59:32,773]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 13:59:32,775]	RAMJobStore initialized.
+[2013-06-09 13:59:32,777]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 13:59:32,777]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 13:59:32,777]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 13:59:32,777]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 13:59:32,778]	任务控制器更新开始。
+[2013-06-09 14:02:08,443]	Using default implementation for ThreadExecutor
+[2013-06-09 14:02:08,447]	Job execution threads will use class loader of thread: main
+[2013-06-09 14:02:08,458]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 14:02:08,460]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 14:02:08,461]	RAMJobStore initialized.
+[2013-06-09 14:02:08,462]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 14:02:08,462]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 14:02:08,462]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 14:02:08,462]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 14:02:08,462]	任务控制器更新开始。
+[2013-06-09 14:02:10,082]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:02:10 CST 2013
+[2013-06-09 14:02:20,078]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:02:20 CST 2013
+[2013-06-09 14:02:30,039]	定时任务结果更新失败！
+[2013-06-09 14:02:30,039]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Incorrect datetime value: '14:02:30' for column 'lastExecTime' at row 1
+[2013-06-09 14:02:30,040]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:02:30 CST 2013
+[2013-06-09 14:02:40,041]	定时任务结果更新失败！
+[2013-06-09 14:02:40,043]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Incorrect datetime value: '14:02:40' for column 'lastExecTime' at row 1
+[2013-06-09 14:02:40,043]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:02:40 CST 2013
+[2013-06-09 14:29:12,501]	Using default implementation for ThreadExecutor
+[2013-06-09 14:29:12,505]	Job execution threads will use class loader of thread: main
+[2013-06-09 14:29:12,515]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 14:29:12,517]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 14:29:12,518]	RAMJobStore initialized.
+[2013-06-09 14:29:12,518]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 14:29:12,518]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 14:29:12,518]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 14:29:12,519]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 14:29:12,519]	任务控制器更新开始。
+[2013-06-09 14:29:15,077]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:29:15 CST 2013
+[2013-06-09 14:29:25,070]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:29:25 CST 2013
+[2013-06-09 14:29:35,061]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:29:35 CST 2013
+[2013-06-09 14:37:54,549]	Using default implementation for ThreadExecutor
+[2013-06-09 14:37:54,554]	Job execution threads will use class loader of thread: main
+[2013-06-09 14:37:54,569]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 14:37:54,572]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 14:37:54,573]	RAMJobStore initialized.
+[2013-06-09 14:37:54,574]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 14:37:54,574]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 14:37:54,574]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 14:37:54,574]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 14:37:54,574]	任务控制器更新开始。
+[2013-06-09 14:37:55,068]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:37:55 CST 2013
+[2013-06-09 14:38:55,053]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:38:55 CST 2013
+[2013-06-09 14:39:55,069]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:39:55 CST 2013
+[2013-06-09 14:40:55,087]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:40:55 CST 2013
+[2013-06-09 14:41:55,061]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:41:55 CST 2013
+[2013-06-09 14:44:13,225]	Using default implementation for ThreadExecutor
+[2013-06-09 14:44:13,229]	Job execution threads will use class loader of thread: main
+[2013-06-09 14:44:13,240]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 14:44:13,242]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 14:44:13,243]	RAMJobStore initialized.
+[2013-06-09 14:44:13,243]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 14:44:13,244]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 14:44:13,244]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 14:44:13,244]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 14:44:13,244]	任务控制器更新开始。
+[2013-06-09 14:47:00,081]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:47:00 CST 2013
+[2013-06-09 14:48:00,062]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 14:48:00 CST 2013
+[2013-06-09 15:28:11,449]	Using default implementation for ThreadExecutor
+[2013-06-09 15:28:11,454]	Job execution threads will use class loader of thread: main
+[2013-06-09 15:28:11,465]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 15:28:11,467]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 15:28:11,468]	RAMJobStore initialized.
+[2013-06-09 15:28:11,469]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 15:28:11,469]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 15:28:11,469]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 15:28:11,469]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 15:28:11,469]	任务控制器更新开始。
+[2013-06-09 15:29:00,115]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 15:29:00 CST 2013
+[2013-06-09 15:30:00,081]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 15:30:00 CST 2013
+[2013-06-09 15:55:45,302]	Using default implementation for ThreadExecutor
+[2013-06-09 15:55:45,306]	Job execution threads will use class loader of thread: main
+[2013-06-09 15:55:45,316]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 15:55:45,319]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 15:55:45,320]	RAMJobStore initialized.
+[2013-06-09 15:55:45,320]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 15:55:45,321]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 15:55:45,321]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 15:55:45,321]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 15:55:45,321]	任务控制器更新开始。
+[2013-06-09 15:56:00,151]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 15:56:00 CST 2013
+[2013-06-09 15:57:00,080]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 15:57:00 CST 2013
+[2013-06-09 15:58:00,130]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 15:58:00 CST 2013
+[2013-06-09 15:59:00,087]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 15:59:00 CST 2013
+[2013-06-09 16:00:00,079]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:00:00 CST 2013
+[2013-06-09 16:01:00,072]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:01:00 CST 2013
+[2013-06-09 16:02:00,104]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:02:00 CST 2013
+[2013-06-09 16:04:48,569]	Using default implementation for ThreadExecutor
+[2013-06-09 16:04:48,573]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:04:48,583]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:04:48,586]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:04:48,587]	RAMJobStore initialized.
+[2013-06-09 16:04:48,587]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:04:48,588]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:04:48,588]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:04:48,588]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:04:48,588]	任务控制器更新开始。
+[2013-06-09 16:05:00,109]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:05:00 CST 2013
+[2013-06-09 16:06:00,087]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:06:00 CST 2013
+[2013-06-09 16:07:00,075]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:07:00 CST 2013
+[2013-06-09 16:08:00,096]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:08:00 CST 2013
+[2013-06-09 16:09:00,081]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:09:00 CST 2013
+[2013-06-09 16:10:00,107]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:10:00 CST 2013
+[2013-06-09 16:15:19,214]	Using default implementation for ThreadExecutor
+[2013-06-09 16:15:19,219]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:15:19,232]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:15:19,234]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:15:19,235]	RAMJobStore initialized.
+[2013-06-09 16:15:19,236]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:15:19,236]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:15:19,236]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:15:19,236]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:15:19,237]	任务控制器更新开始。
+[2013-06-09 16:16:00,099]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:16:00 CST 2013
+[2013-06-09 16:25:32,158]	Using default implementation for ThreadExecutor
+[2013-06-09 16:25:32,162]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:25:32,173]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:25:32,176]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:25:32,176]	RAMJobStore initialized.
+[2013-06-09 16:25:32,177]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:25:32,177]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:25:32,177]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:25:32,177]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:25:32,178]	任务控制器更新开始。
+[2013-06-09 16:26:00,128]	---- DEFAULT.[2]:测试2 结束在 Sun Jun 09 16:26:00 CST 2013
+[2013-06-09 16:26:55,356]	Using default implementation for ThreadExecutor
+[2013-06-09 16:26:55,364]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:26:55,379]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:26:55,382]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:26:55,383]	RAMJobStore initialized.
+[2013-06-09 16:26:55,384]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:26:55,385]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:26:55,385]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:26:55,385]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:26:55,385]	任务控制器更新开始。
+[2013-06-09 16:27:00,095]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:27:00 CST 2013
+[2013-06-09 16:27:00,114]	---- DEFAULT.[2]:测试2 结束在 Sun Jun 09 16:27:00 CST 2013
+[2013-06-09 16:27:26,902]	Using default implementation for ThreadExecutor
+[2013-06-09 16:27:26,908]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:27:26,925]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:27:26,927]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:27:26,928]	RAMJobStore initialized.
+[2013-06-09 16:27:26,929]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:27:26,929]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:27:26,929]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:27:26,929]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:27:26,929]	任务控制器更新开始。
+[2013-06-09 16:27:32,201]	[1]:测试
+[2013-06-09 16:27:32,202]	[2]:测试2
+[2013-06-09 16:27:37,223]	[1]:测试
+[2013-06-09 16:27:37,223]	[2]:测试2
+[2013-06-09 16:28:12,717]	Using default implementation for ThreadExecutor
+[2013-06-09 16:28:12,722]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:28:12,743]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:28:12,747]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:28:12,749]	RAMJobStore initialized.
+[2013-06-09 16:28:12,750]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:28:12,751]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:28:12,751]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:28:12,751]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:28:12,751]	任务控制器更新开始。
+[2013-06-09 16:31:35,604]	Using default implementation for ThreadExecutor
+[2013-06-09 16:31:35,608]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:31:35,619]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:31:35,621]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:31:35,622]	RAMJobStore initialized.
+[2013-06-09 16:31:35,622]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:31:35,622]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:31:35,623]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:31:35,623]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:31:35,623]	任务控制器更新开始。
+[2013-06-09 16:31:44,958]	Using default implementation for ThreadExecutor
+[2013-06-09 16:31:44,964]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:31:44,978]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:31:44,981]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:31:44,982]	RAMJobStore initialized.
+[2013-06-09 16:31:44,983]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:31:44,983]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:31:44,983]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:31:44,983]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:31:44,983]	任务控制器更新开始。
+[2013-06-09 16:32:00,144]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:32:00 CST 2013
+[2013-06-09 16:32:00,155]	---- DEFAULT.[2]:测试2 结束在 Sun Jun 09 16:32:00 CST 2013
+[2013-06-09 16:33:00,071]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:33:00 CST 2013
+[2013-06-09 16:33:00,098]	---- DEFAULT.[2]:测试2 结束在 Sun Jun 09 16:33:00 CST 2013
+[2013-06-09 16:34:00,060]	---- DEFAULT.[2]:测试2 结束在 Sun Jun 09 16:34:00 CST 2013
+[2013-06-09 16:34:00,114]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:34:00 CST 2013
+[2013-06-09 16:34:00,144]	---- DEFAULT.[3]:测试3 结束在 Sun Jun 09 16:34:00 CST 2013
+[2013-06-09 16:34:00,658]	[2]:测试2
+[2013-06-09 16:35:00,088]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:35:00 CST 2013
+[2013-06-09 16:36:00,081]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:36:00 CST 2013
+[2013-06-09 16:36:00,096]	---- DEFAULT.[3]:测试3 结束在 Sun Jun 09 16:36:00 CST 2013
+[2013-06-09 16:36:58,202]	Using default implementation for ThreadExecutor
+[2013-06-09 16:36:58,206]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:36:58,217]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:36:58,219]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:36:58,220]	RAMJobStore initialized.
+[2013-06-09 16:36:58,221]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:36:58,221]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:36:58,221]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:36:58,221]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:36:58,221]	任务控制器更新开始。
+[2013-06-09 16:37:00,065]	失败:'#echo' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���
+�������ļ���
+
+[2013-06-09 16:37:00,101]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:37:00 CST 2013
+[2013-06-09 16:45:59,919]	Using default implementation for ThreadExecutor
+[2013-06-09 16:45:59,923]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:45:59,933]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:45:59,935]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:45:59,936]	RAMJobStore initialized.
+[2013-06-09 16:45:59,937]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:45:59,937]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:45:59,937]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:45:59,937]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:45:59,937]	任务控制器更新开始。
+[2013-06-09 16:46:20,241]	[3]:测试3
+[2013-06-09 16:47:00,138]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:47:00 CST 2013
+[2013-06-09 16:48:00,082]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:48:00 CST 2013
+[2013-06-09 16:50:25,437]	Using default implementation for ThreadExecutor
+[2013-06-09 16:50:25,443]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:50:25,456]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:50:25,459]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:50:25,460]	RAMJobStore initialized.
+[2013-06-09 16:50:25,462]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:50:25,462]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:50:25,462]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:50:25,462]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:50:25,463]	任务控制器更新开始。
+[2013-06-09 16:51:00,136]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:51:00 CST 2013
+[2013-06-09 16:52:00,107]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:52:00 CST 2013
+[2013-06-09 16:53:00,074]	---- DEFAULT.[1]:测试 结束在 Sun Jun 09 16:53:00 CST 2013
+[2013-06-09 16:54:17,937]	Using default implementation for ThreadExecutor
+[2013-06-09 16:54:17,942]	Job execution threads will use class loader of thread: main
+[2013-06-09 16:54:17,958]	Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2013-06-09 16:54:17,961]	Quartz Scheduler v.UNKNOWN.UNKNOWN.UNKNOWN created.
+[2013-06-09 16:54:17,963]	RAMJobStore initialized.
+[2013-06-09 16:54:17,964]	Scheduler meta-data: Quartz Scheduler (vUNKNOWN.UNKNOWN.UNKNOWN) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2013-06-09 16:54:17,964]	Quartz scheduler 'DefaultQuartzScheduler' initialized from default file in current working dir: 'quartz.properties'
+[2013-06-09 16:54:17,964]	Quartz scheduler version: UNKNOWN.UNKNOWN.UNKNOWN
+[2013-06-09 16:54:17,964]	Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+[2013-06-09 16:54:17,964]	任务控制器更新开始。

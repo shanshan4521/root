@@ -2,8 +2,6 @@ package com.axon.mercenary.db;
 
 import java.util.Date;
 
-import org.quartz.TriggerKey;
-
 public class ScheduleTaskInfoBean {
 
 	// 任务编号
@@ -219,6 +217,9 @@ public class ScheduleTaskInfoBean {
 			time = this.repeatTime * 60 * 24;
 		} else if ("month".equals(this.repeatUnit.toLowerCase())) {
 			time = this.repeatTime * 60 * 24 * 30;
+		}else{
+			//设定错误时未day
+			time = this.repeatTime * 60 * 24;
 		}
 		return time;
 	}

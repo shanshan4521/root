@@ -28,7 +28,7 @@ public class MySqlService {
 	private String passWord = null;
 
 	public MySqlService() {
-		// 从streamMedia.properies读取MYSQL的配置
+		// 从mercenary.properties读取MYSQL的配置
 		ProcessConfig config = ProcessConfig.getInstance();
 		mySqlUrl = config.getProperty(Constants.MYSQL_URL);
 		user = config.getProperty(Constants.MYSQL_USER);
