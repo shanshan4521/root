@@ -15,6 +15,8 @@ public class Util {
 	}
 	
 	public static void sendMail(String title,String message){
+
+		
 		// 从mercenary.properties读取MYSQL的配置
 		ProcessConfig config = ProcessConfig.getInstance();
 		// 这个类主要是设置邮件
@@ -30,7 +32,8 @@ public class Util {
 		}
 		mailInfo.setFromAddress(config.getProperty(Constants.MAIL_USER_NAME));
 		mailInfo.setToAddress(config.getProperty(Constants.MAIL_TO_ADDRESS));
-		mailInfo.setSubject(title);
+		String area = config.getProperty(Constants.CITY);
+		mailInfo.setSubject(area+":"+title);
 		mailInfo.setContent(message);
 		// 发送邮件
 		SimpleMailSender sms = new SimpleMailSender();

@@ -61,7 +61,6 @@ public class DumbInterruptableJob implements Job {
 			log.error(task.toString());
 			return;
 		}
-
 		Constants.executingJobList.add(task.getJobKey());
 
 		// 启动守护线程监控存储过程执行时间，超时时强制退出。

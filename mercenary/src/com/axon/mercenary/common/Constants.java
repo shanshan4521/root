@@ -26,5 +26,7 @@ public class Constants {
 	public static final String MAIL_TO_ADDRESS = "toAddress";
 	
 	public static final String TASK_TIMEOUT = "taskTimeOut";
+	
+	public static final String CITY = "city";
 
 }

@@ -14,13 +14,14 @@ public class MySqlAction {
 	private Logger log = LoggerFactory.getLogger(MySqlService.class);
 
 	// 启动中的任务
-	String selectSql = "SELECT taskId, name, from_unixtime(execTime) as execTime, programUrl, "
-			+ "pluralFlag, parameter, from_unixtime(deadTime),repeatTime, repeatUnit "
-			+ "FROM pdc_aide.schedule_task_info where status=1";
+	String selectSql = "SELECT taskId, name, from_unixtime(execTime) as execTime,  from_unixtime(effecttime) as effecttime, " +
+			"programUrl, pluralFlag, parameter, from_unixtime(deadTime) as deadTime ,repeatTime, repeatUnit "
+			+ "FROM pdc_aide.schedule_task_info where status=1 and effecttime <= unix_timestamp(now()) ";
 
 	// 过期任务暂停
 	String updateSql = "update pdc_aide.schedule_task_info set status  = 2 "
-			+ "where deadTime > 0 and deadtime < unix_timestamp(now())";
+			+ "where (deadTime > 0 and deadtime < unix_timestamp(now())) " +
+			"or (repeatTime = 0 and execTime<unix_timestamp(now()))";
 
 	public void setTaskInfo() throws SQLException {
 		MySqlService service = new MySqlService();
@@ -35,7 +36,7 @@ public class MySqlAction {
 				ScheduleTaskInfoBean taskInfo = new ScheduleTaskInfoBean();
 				taskInfo.setTaskId(rs.getString("taskId"));
 				taskInfo.setName(rs.getString("name"));
-				taskInfo.setExecTime(rs.getTimestamp("execTime"));
+				taskInfo.setExecTime(rs.getTimestamp("execTime"),rs.getTimestamp("effecttime"));
 				taskInfo.setProgramUrl(rs.getString("programUrl"));
 				taskInfo.setPluralFlag(rs.getInt("pluralFlag"));
 				taskInfo.setParameter(rs.getString("parameter"));
@@ -61,7 +62,7 @@ public class MySqlAction {
 		// 任务结束更新结果和日期。
 		String updateTask = "update pdc_aide.schedule_task_info set result = '"
 				+ result
-				+ "' , lastExecTime = unix_timestamp(now()) where taskId = "
+				+ "' where taskId = "
 				+ taskId;
 
 		MySqlService service = new MySqlService();

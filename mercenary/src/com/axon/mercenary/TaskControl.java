@@ -178,9 +178,11 @@ public class TaskControl {
 		PropertyConfigurator.configure("log4j.properties");
 		if(args.length > 0 && args[0].toLowerCase().equals("testmail")){
 			Util.sendMail("自动任务调度服务mail测试", "成功啦，~\\(≧▽≦)/~啦啦啦，O(∩_∩)O");
-		}else{
+		}else if(args.length > 0 && args[0].toLowerCase().equals("start")){
 			TaskControl example = new TaskControl();
 			example.run();
+		}else if(args.length > 0 && args[0].toLowerCase().equals("stop")){
+			System.exit(0);
 		}
 	}
 

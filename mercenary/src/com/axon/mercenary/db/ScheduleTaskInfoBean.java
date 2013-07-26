@@ -77,8 +77,17 @@ public class ScheduleTaskInfoBean {
 		return execTime;
 	}
 
-	public void setExecTime(Date execTime) {
-		this.execTime = execTime;
+	public void setExecTime(Date execTime, Date effecttime) {
+		long time= effecttime.getTime() - execTime.getTime();
+
+		if(time <= 0){
+			this.execTime = execTime;
+		}else{
+			long exec =  execTime.getTime();
+			//86400000为一天的毫秒数
+			exec =exec + (time/86400000 + 1)* 86400000;
+			this.execTime.setTime(exec);
+		}
 	}
 
 	public String getProgramUrl() {
