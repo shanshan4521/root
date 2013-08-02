@@ -36,21 +36,42 @@ public class AutoMartket4User {
 	}
 
 	public void run() {
-
-		for (int i = 1; i < retry; i++) {
-			MySqlAction action = new MySqlAction();
-			TaskBean taskInfo = action.getTaskBean(id);
+		log.info("营销任务自动生成开始，task_ID："+id);
+		
+		MySqlAction action = new MySqlAction();
+		TaskBean taskInfo = new TaskBean();
+		int i = 0;
+		// 取得任务信息。
+		while (true) {
+			taskInfo = action.getTaskBean(id);
 			if ("".equals(taskInfo.getId())) {
-				log.error("未能取得任务信息，等待10s后重试。taskId:" + id);
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e) {
-					// do nothing
+				i++;
+				// 失败时重试。
+				if (i < retry) {
+					log.error("未能取得任务信息，等待10s后重试第" + (i + 1) + "次。taskId:" + id);
+					try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e) {
+						// do nothing
+					}
+					continue;
+				} else {
+					log.error("营销任务自动生成失败，task_ID："+id);
+					return;
 				}
-				continue;
+
 			}
-			
-			String json = null;
+			break;
+		}
+
+		String json = null;
+		ResultBean obj = new ResultBean();
+		// obj.setPushTable("userdata_4.t_push_zhonghai_0_20121208133452");
+		// obj.setUserCount(555);
+
+		i = 0;
+		// 多维度筛选
+		while (true) {
 			try {
 				Socket socket = new Socket(socketIp, socketPort);
 
@@ -60,7 +81,7 @@ public class AutoMartket4User {
 						true);
 				out.println(taskInfo.getModule_str());
 
-				for (int j = 0; j < 3600; j++) {
+				for (int j = 0; j < 1800; j++) {
 					json = in.readLine();
 					if (json != null && !"".equals(json)) {
 						break;
@@ -71,58 +92,181 @@ public class AutoMartket4User {
 					}
 				}
 
-
 			} catch (Exception e) {
-				log.error("多维度筛选失败，等待10s后重试。taskId:" + id);
-				log.error(e.toString());
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e1) {
-					// do nothing
+				i++;
+				if (i < retry) {
+					log.error("多维度筛选失败，等待10s后重试重试第" + (i + 1) + "次。taskId:"
+							+ id);
+					log.error(e.toString());
+					try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e1) {
+						// do nothing
+					}
+					continue;
+				} else {
+					log.error("营销任务自动生成失败，task_ID："+id);
+					return;
 				}
-				continue;
 			}
-			
+
 			Gson gson = new Gson();
-			ResultBean obj = gson.fromJson(json, ResultBean.class);  
-			if(obj.getPushTable() == null){
-				log.error("多维度筛选未能得到结果表，等待10s后重试。taskId:" + id);
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e1) {
-					// do nothing
+			obj = gson.fromJson(json, ResultBean.class);
+			if (obj.getPushTable() == null) {
+				i++;
+				// 失败时重试。
+				if (i < retry) {
+					log.error("多维度筛选未能得到结果表，等待10s后重试第" + (i + 1) + "次。taskId:"
+							+ id);
+					try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e1) {
+						// do nothing
+					}
+					continue;
+				} else {
+					log.error("营销任务自动生成失败，task_ID："+id);
+					return;
 				}
-				continue;
+
 			}
-			
-			try {
-				action.updatePushTable(id,obj.getPushTable());
-			} catch (SQLException e) {
-				log.error("任务信息更新失败，等待10s后重试。taskId:" + id);
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e1) {
-					// do nothing
-				}
-				continue;
-			}
-			
-			if("1".equals(taskInfo.getIs_push())){
-				if(taskInfo.getModule_period() > 0){
-					
-				}else{
-					
-				}
-			}			
+			break;
 		}
+		obj.setPushTable("pdc_temp."+obj.getPushTable());
+		i = 0;
+		// 更新任务信息表
+		while (true) {
+			try {
+				action.updatePushTable(id, obj.getPushTable(),obj.getUserCount());
+			} catch (SQLException e) {
+				i++;
+				if (i < retry) {
+					log.error("任务信息更新失败，等待10s后重试第" + (i + 1) + "次。taskId:" + id);
+					try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e1) {
+						// do nothing
+					}
+					continue;
+				} else {
+					log.error("营销任务自动生成失败，task_ID："+id);
+					return;
+				}
+			}
+			break;
+		}
+
+		// 更新营销任务表
+		if ("1".equals(taskInfo.getIs_push())) {
+			if (taskInfo.getModule_period() > 1 ) {
+				// 分表
+				for (int j = 0; j < taskInfo.getModule_period(); j++) {
+					i = 0;
+					while (true) {
+						try {
+							action.splitPushTable(j, obj.getUserCount(),
+									taskInfo.getModule_period(),
+									obj.getPushTable(),taskInfo.getRepeatFlag());
+						} catch (SQLException e) {
+							i++;
+							if (i < retry) {
+								log.error("分表失败，等待10s后重试第" + (i + 1)
+										+ "次。table:" + id + "  table:"
+										+ obj.getPushTable());
+								try {
+									Thread.sleep(10000);
+								} catch (InterruptedException e1) {
+									// do nothing
+								}
+								continue;
+							} else {
+								log.error("营销任务自动生成失败，task_ID："+id);
+								return;
+							}
+						}
+						break;
+					}
+				}
+
+				// 更新营销任务表
+				for (int j = 0; j < taskInfo.getModule_period(); j++) {
+					i = 0;
+					while (true) {
+						int num = obj.getUserCount();
+						if(taskInfo.getRepeatFlag() == 1){
+							num = obj.getUserCount()/taskInfo.getModule_period();
+							if (j == taskInfo.getModule_period() - 1) {
+								num = obj.getUserCount() - num * j;
+							}
+						}
+						String table = obj.getPushTable() + "_" + j;
+						if(j != 0){
+							taskInfo.setTask_etime(taskInfo.getTask_etime()+24*60*60);
+						}
+						try {
+							action.insertPTask(taskInfo, table, num);
+						} catch (SQLException e) {
+							i++;
+							if (i < retry) {
+								log.error(" 更新营销任务表失败，等待10s后重试第" + (i + 1)
+										+ "次。table:" + id + "  table:" + table);
+								try {
+									Thread.sleep(10000);
+								} catch (InterruptedException e1) {
+									// do nothing
+								}
+								continue;
+							} else {
+								log.error("营销任务自动生成失败，task_ID："+id);
+								return;
+							}
+						}
+						break;
+					}
+				}
+
+			} else {
+				// 不分表
+				i = 0;
+				while (true) {
+					try {
+						action.insertPTask(taskInfo, obj.getPushTable(),
+								obj.getUserCount());
+					} catch (SQLException e) {
+						i++;
+						if (i < retry) {
+							log.error(" 更新营销任务表失败，等待10s后重试第" + (i + 1)
+									+ "次。table:" + id + "  table:"
+									+ obj.getPushTable());
+							try {
+								Thread.sleep(10000);
+							} catch (InterruptedException e1) {
+								// do nothing
+							}
+							continue;
+						} else {
+							log.error("营销任务自动生成失败，task_ID："+id);
+							return;
+						}
+					}
+					break;
+				}
+			}
+			try {
+				action.updateTask4Push(id, taskInfo.getPush_num());
+			} catch (SQLException e) {
+				log.error("营销任务自动生成失败，task_ID："+id);
+			}
+		}
+		log.info("营销任务自动生成完毕，task_ID："+id);
 	}
 
 	public static void main(String[] args) throws Exception {
 		PropertyConfigurator.configure("log4j.properties");
 		if (args.length > 0) {
 			String taskId = args[0];
-		} else {
-
+			AutoMartket4User m = new AutoMartket4User(taskId);
+			m.run();
 		}
 	}
 }

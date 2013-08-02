@@ -1,0 +1,35 @@
+[2013-06-18 10:16:37,983]	任务信息更新失败！
+[2013-06-18 10:16:37,984]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'user_table' at row 1
+[2013-06-18 10:17:03,206]	任务信息更新失败！
+[2013-06-18 10:17:03,209]	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'user_table' at row 1
+[2013-06-18 10:22:20,561]	前回最大phone取得失败！tableName:userdata_4.t_push_zhonghai_0_20121208133452_0
+[2013-06-18 10:22:20,564]	select max(phone) as phone from tempTable 
+[2013-06-18 10:22:20,564]	java.sql.SQLException: No database selected
+[2013-06-18 10:27:04,239]	分表失败！
+[2013-06-18 10:27:05,670]	drop table if exists userdata_4.t_push_zhonghai_0_20121208133452_1
+[2013-06-18 10:27:49,080]	分表失败！
+[2013-06-18 10:27:49,083]	drop table if exists userdata_4.t_push_zhonghai_0_20121208133452_1
+[2013-06-18 10:27:49,083]	CREATE TABLE  userdata_4.t_push_zhonghai_0_20121208133452_1( phone bigint(13) unsigned NOT NULL ) ENGINE=MEMORY DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+[2013-06-18 10:27:49,084]	insert into userdata_4.t_push_zhonghai_0_20121208133452_1 select phone from userdata_4.t_push_zhonghai_0_20121208133452where phone > 8613005901169 limit 185
+[2013-06-18 10:27:49,084]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> 8613005901169 limit 185' at line 1
+[2013-06-18 10:29:05,366]	分表失败！
+[2013-06-18 10:29:05,368]	drop table if exists userdata_4.t_push_zhonghai_0_20121208133452_1
+[2013-06-18 10:29:05,368]	CREATE TABLE  userdata_4.t_push_zhonghai_0_20121208133452_1( phone bigint(13) unsigned NOT NULL ) ENGINE=MEMORY DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+[2013-06-18 10:29:05,368]	insert into userdata_4.t_push_zhonghai_0_20121208133452_1 select phone from userdata_4.t_push_zhonghai_0_20121208133452where phone > 8613005901169 limit 185
+[2013-06-18 10:29:05,368]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> 8613005901169 limit 185' at line 1
+[2013-06-18 10:30:33,949]	分表失败！
+[2013-06-18 10:30:34,300]	drop table if exists userdata_4.t_push_zhonghai_0_20121208133452_1
+[2013-06-18 10:30:34,764]	CREATE TABLE  userdata_4.t_push_zhonghai_0_20121208133452_1( phone bigint(13) unsigned NOT NULL ) ENGINE=MEMORY DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+[2013-06-18 10:30:35,149]	insert into userdata_4.t_push_zhonghai_0_20121208133452_1 select phone from userdata_4.t_push_zhonghai_0_20121208133452where phone > 8613005901169 limit 185
+[2013-06-18 10:30:35,748]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> 8613005901169 limit 185' at line 1
+[2013-06-18 10:31:16,824]	分表失败！
+[2013-06-18 10:31:16,825]	drop table if exists userdata_4.t_push_zhonghai_0_20121208133452_1
+[2013-06-18 10:31:16,825]	CREATE TABLE  userdata_4.t_push_zhonghai_0_20121208133452_1( phone bigint(13) unsigned NOT NULL ) ENGINE=MEMORY DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+[2013-06-18 10:31:16,826]	insert into userdata_4.t_push_zhonghai_0_20121208133452_1 select phone from userdata_4.t_push_zhonghai_0_20121208133452where phone > 8613005901169 limit 185
+[2013-06-18 10:31:16,826]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> 8613005901169 limit 185' at line 1
+[2013-06-18 10:31:16,826]	分表失败，等待10s后重试第2次。table:2  table:userdata_4.t_push_zhonghai_0_20121208133452
+[2013-06-18 10:31:26,948]	分表失败！
+[2013-06-18 10:31:26,949]	drop table if exists userdata_4.t_push_zhonghai_0_20121208133452_1
+[2013-06-18 10:31:26,949]	CREATE TABLE  userdata_4.t_push_zhonghai_0_20121208133452_1( phone bigint(13) unsigned NOT NULL ) ENGINE=MEMORY DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+[2013-06-18 10:31:26,949]	insert into userdata_4.t_push_zhonghai_0_20121208133452_1 select phone from userdata_4.t_push_zhonghai_0_20121208133452where phone > 8613005901169 limit 185
+[2013-06-18 10:31:26,949]	com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> 8613005901169 limit 185' at line 1

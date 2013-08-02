@@ -34,7 +34,6 @@ public class ProcessConfig {
 	public synchronized static void resetInstance() {
 		instance = null;
 	}
-
 	private ProcessConfig() {
 		InputStream in = null;
 		try {
